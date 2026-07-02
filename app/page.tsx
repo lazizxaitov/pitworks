@@ -4,7 +4,7 @@ import type { CSSProperties, ReactNode } from "react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-type Locale = "en" | "ru" | "uz";
+export type Locale = "en" | "ru" | "uz";
 
 type Translation = {
   nav: Array<{ href: string; label: string }>;
@@ -45,14 +45,14 @@ type Translation = {
   };
 };
 
-const content: Record<Locale, Translation> = {
+export const content: Record<Locale, Translation> = {
   en: {
     nav: [
-      { href: "#about", label: "About Us" },
-      { href: "#projects", label: "Projects" },
-      { href: "#locations", label: "Locations" },
-      { href: "#team", label: "Team" },
-      { href: "#contacts", label: "Contacts" },
+      { href: "/about", label: "About Us" },
+      { href: "/projects", label: "Projects" },
+      { href: "/locations", label: "Locations" },
+      { href: "/team", label: "Team" },
+      { href: "/contacts", label: "Contacts" },
     ],
     hero: {
       eyebrow: "Pitworks Mining Group",
@@ -153,11 +153,11 @@ const content: Record<Locale, Translation> = {
   },
   ru: {
     nav: [
-      { href: "#about", label: "О нас" },
-      { href: "#projects", label: "Проекты" },
-      { href: "#locations", label: "Локации" },
-      { href: "#team", label: "Команда" },
-      { href: "#contacts", label: "Контакты" },
+      { href: "/about", label: "О нас" },
+      { href: "/projects", label: "Проекты" },
+      { href: "/locations", label: "Локации" },
+      { href: "/team", label: "Команда" },
+      { href: "/contacts", label: "Контакты" },
     ],
     hero: {
       eyebrow: "Pitworks Mining Group",
@@ -258,11 +258,11 @@ const content: Record<Locale, Translation> = {
   },
   uz: {
     nav: [
-      { href: "#about", label: "Biz haqimizda" },
-      { href: "#projects", label: "Loyihalar" },
-      { href: "#locations", label: "Manzillar" },
-      { href: "#team", label: "Jamoa" },
-      { href: "#contacts", label: "Aloqa" },
+      { href: "/about", label: "Biz haqimizda" },
+      { href: "/projects", label: "Loyihalar" },
+      { href: "/locations", label: "Manzillar" },
+      { href: "/team", label: "Jamoa" },
+      { href: "/contacts", label: "Aloqa" },
     ],
     hero: {
       eyebrow: "Pitworks Mining Group",
@@ -363,7 +363,7 @@ const content: Record<Locale, Translation> = {
   },
 };
 
-const languages: Array<{ code: Locale; label: string }> = [
+export const languages: Array<{ code: Locale; label: string }> = [
   { code: "en", label: "EN" },
   { code: "ru", label: "RU" },
   { code: "uz", label: "UZ" },
@@ -548,13 +548,13 @@ export default function Home() {
 
   return (
     <main className="relative isolate min-h-screen overflow-hidden bg-[#050816] text-white">
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+      <div className="pointer-events-none fixed inset-0 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_32%),radial-gradient(circle_at_20%_20%,rgba(182,115,34,0.08),transparent_26%),radial-gradient(circle_at_80%_65%,rgba(125,211,252,0.06),transparent_28%)]" />
         <div className="absolute inset-0 opacity-[0.16] bg-[linear-gradient(135deg,transparent_0_46%,rgba(255,255,255,0.06)_46%_47%,transparent_47%_100%),linear-gradient(45deg,transparent_0_46%,rgba(182,115,34,0.08)_46%_47%,transparent_47%_100%)] bg-[size:140px_140px]" />
         <div className="absolute inset-0 opacity-[0.08] bg-[repeating-linear-gradient(90deg,rgba(255,255,255,0.08)_0_1px,transparent_1px_180px),repeating-linear-gradient(0deg,rgba(255,255,255,0.06)_0_1px,transparent_1px_180px)]" />
         <div className="absolute inset-x-0 top-[12%] h-[42rem] bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.07),transparent_68%)] opacity-60" />
         <div
-          className="absolute h-[34rem] w-[34rem] rounded-full bg-[#b67322]/18 blur-3xl transition-[transform,opacity] duration-300"
+          className="absolute h-[34rem] w-[34rem] rounded-full bg-[#b67322]/18 blur-3xl transition-[transform,opacity] duration-300 will-change-transform"
           style={{
             left: `${pointer.x}%`,
             top: `${pointer.y}%`,
