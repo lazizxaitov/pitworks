@@ -175,7 +175,7 @@ const content: Record<Locale, Translation> = {
     },
     sections: {
       about: {
-        title: "Обзор",
+        title: "Overview",
         intro:
           "Основанная в 2025 году, Pitworks Mining Group занимается выполнением масштабных земляных работ для проектов мирового уровня по развитию месторождений в Узбекистане и соседних территориях.",
         cards: [
@@ -187,7 +187,7 @@ const content: Record<Locale, Translation> = {
           {
             title: "Наш фокус",
             text:
-              "Нулевой травматизм, устойчивая добыча, передача знаний, стратегический рост и репутация, основанная на результате.",
+              "Нулевой травматизм, устойчивая добыча, передача опыта, стратегический рост и репутация, основанная на результате.",
           },
           {
             title: "Мы добываем будущее",
@@ -204,7 +204,7 @@ const content: Record<Locale, Translation> = {
       projects: {
         title: "Проекты",
         intro:
-          "Действующие карьеры, разведка, инфраструктура и ESG-инициативы.",
+          "Действующие карьеры, разведка, инфраструктура и инициативы по устойчивому развитию.",
         items: [
           {
             title: "Программа добычи руды",
@@ -292,7 +292,7 @@ const content: Record<Locale, Translation> = {
           {
             title: "Bizning fokus",
             text:
-              "Nol zarar, barqaror konchilik, know-how transfer, strategik o‘sish va kuchli obro‘.",
+              "Nol zarar, barqaror konchilik, tajriba almashish, strategik o‘sish va kuchli obro‘.",
           },
           {
             title: "Biz kelajakni qazib olamiz",
@@ -309,7 +309,7 @@ const content: Record<Locale, Translation> = {
       projects: {
         title: "Loyihalar",
         intro:
-          "Faol konlar, geologik qidiruv, infratuzilma va ESG tashabbuslari.",
+          "Faol konlar, geologik qidiruv, infratuzilma va barqaror rivojlanish tashabbuslari.",
         items: [
           {
             title: "Ruda qazib olish",
@@ -443,7 +443,7 @@ function GlassSection({
   return (
     <section
       id={id}
-      className={`relative mt-8 overflow-hidden rounded-[2.5rem] border ${outerClass} ${toneClass} px-6 py-8 backdrop-blur-3xl md:px-10 md:py-10`}
+      className={`relative mt-8 overflow-hidden rounded-none border ${outerClass} ${toneClass} px-6 py-8 backdrop-blur-3xl md:px-10 md:py-10`}
       style={{ transform: `translate3d(0, ${depth}px, 0)` }}
     >
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.14),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(182,115,34,0.12),transparent_30%)]" />
@@ -547,8 +547,12 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen overflow-hidden bg-[#050816] text-white">
+    <main className="relative isolate min-h-screen overflow-hidden bg-[#050816] text-white">
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_32%),radial-gradient(circle_at_20%_20%,rgba(182,115,34,0.08),transparent_26%),radial-gradient(circle_at_80%_65%,rgba(125,211,252,0.06),transparent_28%)]" />
+        <div className="absolute inset-0 opacity-[0.16] bg-[linear-gradient(135deg,transparent_0_46%,rgba(255,255,255,0.06)_46%_47%,transparent_47%_100%),linear-gradient(45deg,transparent_0_46%,rgba(182,115,34,0.08)_46%_47%,transparent_47%_100%)] bg-[size:140px_140px]" />
+        <div className="absolute inset-0 opacity-[0.08] bg-[repeating-linear-gradient(90deg,rgba(255,255,255,0.08)_0_1px,transparent_1px_180px),repeating-linear-gradient(0deg,rgba(255,255,255,0.06)_0_1px,transparent_1px_180px)]" />
+        <div className="absolute inset-x-0 top-[12%] h-[42rem] bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.07),transparent_68%)] opacity-60" />
         <div
           className="absolute h-[34rem] w-[34rem] rounded-full bg-[#b67322]/18 blur-3xl transition-[transform,opacity] duration-300"
           style={{
@@ -573,27 +577,27 @@ export default function Home() {
       </div>
 
       <div className="relative mx-auto flex min-h-screen w-full max-w-7xl flex-col px-4 pb-16 pt-4 sm:px-6 lg:px-8">
-        <header className="sticky top-4 z-20 rounded-[1.75rem] border border-white/14 bg-white/10 px-4 py-4 shadow-[0_24px_80px_rgba(0,0,0,0.26)] backdrop-blur-[28px]">
+        <header className="sticky top-4 z-20 rounded-none border border-white/14 bg-white/10 px-4 py-4 shadow-[0_24px_80px_rgba(0,0,0,0.26)] backdrop-blur-[28px]">
           <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
             <BrandMark size="sm" />
             <nav className="flex flex-wrap items-center gap-2 text-sm text-white/80">
               {copy.nav.map((item) => (
                 <a
                   key={item.href}
-                  className="rounded-full px-3 py-1.5 transition hover:bg-white/10 hover:text-white"
+                  className="rounded-none px-3 py-1.5 transition hover:bg-white/10 hover:text-white"
                   href={item.href}
                 >
                   {item.label}
                 </a>
               ))}
             </nav>
-            <div className="flex items-center gap-2 rounded-full border border-white/10 bg-black/20 p-1">
+            <div className="flex items-center gap-2 rounded-none border border-white/10 bg-black/20 p-1">
               {languages.map((language) => (
                 <button
                   key={language.code}
                   type="button"
                   onClick={() => setLocale(language.code)}
-                  className={`rounded-full px-3 py-1.5 text-sm font-medium transition ${
+                  className={`rounded-none px-3 py-1.5 text-sm font-medium transition ${
                     locale === language.code
                       ? "bg-[#b67322] text-white"
                       : "text-white/75 hover:bg-white/10 hover:text-white"
@@ -608,12 +612,12 @@ export default function Home() {
         </header>
 
         <section
-          className="relative mt-8 grid gap-8 overflow-hidden rounded-[2.75rem] border border-white/14 bg-[linear-gradient(135deg,rgba(255,255,255,0.12),rgba(255,255,255,0.05))] px-6 py-6 shadow-[0_32px_120px_rgba(0,0,0,0.35)] backdrop-blur-[30px] md:grid-cols-[1.2fr_0.8fr] md:px-10 md:py-10"
+          className="relative mt-8 grid gap-8 overflow-hidden rounded-none border border-white/14 bg-[linear-gradient(135deg,rgba(255,255,255,0.12),rgba(255,255,255,0.05))] px-6 py-6 shadow-[0_32px_120px_rgba(0,0,0,0.35)] backdrop-blur-[30px] md:grid-cols-[1.2fr_0.8fr] md:px-10 md:py-10"
           style={heroStyle}
         >
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(182,115,34,0.2),transparent_34%),radial-gradient(circle_at_bottom_right,rgba(125,211,252,0.12),transparent_28%),radial-gradient(circle_at_center,rgba(255,255,255,0.08),transparent_42%)]" />
           <div className="relative space-y-8">
-            <div className="inline-flex rounded-full border border-[#b67322]/30 bg-[#b67322]/10 px-4 py-1 text-sm font-semibold uppercase tracking-[0.24em] text-[#f6c37b]">
+            <div className="inline-flex rounded-none border border-[#b67322]/30 bg-[#b67322]/10 px-4 py-1 text-sm font-semibold uppercase tracking-[0.24em] text-[#f6c37b]">
               {copy.hero.eyebrow}
             </div>
             <div className="space-y-5">
@@ -625,13 +629,13 @@ export default function Home() {
             <div className="flex flex-wrap gap-3">
               <a
                 href="#projects"
-                className="rounded-full bg-[#b67322] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#d08a31]"
+                className="rounded-none bg-[#b67322] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#d08a31]"
               >
                 {copy.hero.primaryCta}
               </a>
               <a
                 href="#contacts"
-                className="rounded-full border border-white/20 bg-white/5 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
+                className="rounded-none border border-white/20 bg-white/5 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
               >
                 {copy.hero.secondaryCta}
               </a>
@@ -640,7 +644,7 @@ export default function Home() {
               {copy.hero.stats.map((stat) => (
                 <div
                   key={stat.label}
-                  className="rounded-[1.5rem] border border-white/12 bg-white/10 p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.2)] backdrop-blur-[26px]"
+                  className="rounded-none border border-white/12 bg-white/10 p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.2)] backdrop-blur-[26px]"
                 >
                   <div className="text-2xl font-black text-white">{stat.value}</div>
                   <div className="mt-1 text-sm text-white/65">{stat.label}</div>
@@ -650,7 +654,7 @@ export default function Home() {
           </div>
 
           <div className="relative grid gap-4" style={sidePanelStyle}>
-            <div className="rounded-[1.75rem] border border-white/14 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.18),transparent_42%),linear-gradient(135deg,rgba(255,255,255,0.14),rgba(255,255,255,0.06))] p-6 shadow-[0_18px_60px_rgba(0,0,0,0.25)] backdrop-blur-[30px]">
+            <div className="rounded-none border border-white/14 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.18),transparent_42%),linear-gradient(135deg,rgba(255,255,255,0.14),rgba(255,255,255,0.06))] p-6 shadow-[0_18px_60px_rgba(0,0,0,0.25)] backdrop-blur-[30px]">
               <div className="flex items-center justify-between">
                 <div className="text-sm uppercase tracking-[0.26em] text-white/55">
                   {dashboardCopy.snapshot}
@@ -659,20 +663,20 @@ export default function Home() {
               </div>
               <div className="mt-6 space-y-4">
                 <BrandMark size="lg" />
-                <div className="rounded-[1.25rem] border border-white/12 bg-white/8 p-4">
+                <div className="rounded-none border border-white/12 bg-white/8 p-4">
                   <div className="text-sm uppercase tracking-[0.22em] text-white/50">
                     {dashboardCopy.facts}
                   </div>
                   <div className="mt-3 flex flex-wrap gap-3">
                     {dashboardCopy.chips.map((chip) => (
-                      <span key={chip} className="rounded-full bg-[#b67322] px-3 py-1 text-sm text-white">
+                      <span key={chip} className="rounded-none bg-[#b67322] px-3 py-1 text-sm text-white">
                         {chip}
                       </span>
                     ))}
                   </div>
                 </div>
                 <div className="grid grid-cols-2 gap-3">
-                  <div className="rounded-[1.25rem] bg-[#0b1226] p-4">
+                  <div className="rounded-none bg-[#0b1226] p-4">
                     <div className="text-xs uppercase tracking-[0.24em] text-cyan-200/60">
                       {dashboardCopy.industry}
                     </div>
@@ -680,7 +684,7 @@ export default function Home() {
                       {dashboardCopy.indicator}
                     </div>
                   </div>
-                  <div className="rounded-[1.25rem] bg-[#111827] p-4">
+                  <div className="rounded-none bg-[#111827] p-4">
                     <div className="text-xs uppercase tracking-[0.24em] text-[#f6c37b]">
                       {dashboardCopy.size}
                     </div>
@@ -691,13 +695,13 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="rounded-[1.75rem] border border-white/12 bg-white/12 p-6 backdrop-blur-[30px]">
+            <div className="rounded-none border border-white/12 bg-white/12 p-6 backdrop-blur-[30px]">
               <div className="text-sm uppercase tracking-[0.24em] text-white/50">
                 {dashboardCopy.operating}
               </div>
               <div className="mt-4 grid gap-3 text-sm text-white/70">
                 {dashboardCopy.profileLines.map((line) => (
-                  <div key={line} className="rounded-2xl border border-white/10 bg-white/5 p-4">
+                  <div key={line} className="rounded-none border border-white/10 bg-white/5 p-4">
                     {line}
                   </div>
                 ))}
@@ -711,7 +715,7 @@ export default function Home() {
             {copy.sections.about.cards.map((card) => (
               <article
                 key={card.title}
-                className="group rounded-[1.75rem] border border-white/12 bg-[linear-gradient(180deg,rgba(255,255,255,0.1),rgba(255,255,255,0.05))] p-6 transition duration-300 hover:-translate-y-1 hover:border-[#b67322]/40 hover:bg-white/12 hover:shadow-[0_18px_50px_rgba(182,115,34,0.12)]"
+                className="group rounded-none border border-white/12 bg-[linear-gradient(180deg,rgba(255,255,255,0.1),rgba(255,255,255,0.05))] p-6 transition duration-300 hover:-translate-y-1 hover:border-[#b67322]/40 hover:bg-white/12 hover:shadow-[0_18px_50px_rgba(182,115,34,0.12)]"
               >
                 <div className="text-sm font-bold uppercase tracking-[0.24em] text-[#b67322]">
                   {card.title}
@@ -733,7 +737,7 @@ export default function Home() {
             {copy.sections.projects.items.map((item) => (
               <article
                 key={item.title}
-                className="rounded-[1.75rem] border border-white/12 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.16),transparent_42%),linear-gradient(135deg,rgba(255,255,255,0.1),rgba(255,255,255,0.045))] p-6 backdrop-blur-[24px]"
+                className="rounded-none border border-white/12 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.16),transparent_42%),linear-gradient(135deg,rgba(255,255,255,0.1),rgba(255,255,255,0.045))] p-6 backdrop-blur-[24px]"
               >
                 <div className="text-sm uppercase tracking-[0.24em] text-[#f6c37b]">
                   {item.title}
@@ -754,7 +758,7 @@ export default function Home() {
             {copy.sections.locations.items.map((item) => (
               <article
                 key={item.city}
-                className="rounded-[1.75rem] border border-white/12 bg-white/8 p-6 backdrop-blur-[26px]"
+                className="rounded-none border border-white/12 bg-white/8 p-6 backdrop-blur-[26px]"
               >
                 <div className="text-sm uppercase tracking-[0.24em] text-[#b67322]">
                   {item.city}
@@ -776,7 +780,7 @@ export default function Home() {
             {copy.sections.team.items.map((item) => (
               <article
                 key={item.role}
-                className="rounded-[1.75rem] border border-white/12 bg-[linear-gradient(180deg,rgba(255,255,255,0.1),rgba(255,255,255,0.04))] p-6"
+                className="rounded-none border border-white/12 bg-[linear-gradient(180deg,rgba(255,255,255,0.1),rgba(255,255,255,0.04))] p-6"
               >
                 <div className="text-sm uppercase tracking-[0.24em] text-[#f6c37b]">
                   {item.role}
@@ -798,7 +802,7 @@ export default function Home() {
             {copy.sections.contacts.details.map((item) => (
               <div
                 key={item.label}
-                className="rounded-[1.5rem] border border-white/12 bg-white/14 p-5 backdrop-blur-[26px]"
+                className="rounded-none border border-white/12 bg-white/14 p-5 backdrop-blur-[26px]"
               >
                 <div className="text-xs uppercase tracking-[0.24em] text-white/70">
                   {item.label}
